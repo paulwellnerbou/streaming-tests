@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Current Time Test</title>
+    <style>
+      audio {
+        display: block;
+      }
+      button {
+        padding: 4px;
+        margin: 10px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="audio" src="media/talons-Rabbit.mp3" controls></audio>
+    <button id="setTime30">Set time to 30 secs</button>
+    <button id="skipForwards">Skip forward 5 secs</button>
+    <script>
+      var audioEl = document.getElementById('audio');
+      var setTime30Btn = document.getElementById('setTime30');
+      var skipForwardsBtn = document.getElementById('skipForwards');
+
+      setTime30Btn.addEventListener('click', function() {
+        audioEl.currentTime = 30;
+        console.log('Current time', audioEl.currentTime);
+      });
+
+      skipForwardsBtn.addEventListener('click', function() {
+        audioEl.currentTime += 5;
+        console.log('Current time', audioEl.currentTime);
+      });
+    </script>
+  </body>
+</html>
